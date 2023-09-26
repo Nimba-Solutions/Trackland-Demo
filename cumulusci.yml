@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.78.0'
+project:
+    name: Trackland-Demo
+    package:
+        name: Trackland-Demo
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/Trackland-Demo/tests
+            options:
+                outputdir: robot/Trackland-Demo/results
+
+    robot_testdoc:
+        options:
+            path: robot/Trackland-Demo/tests
+            output: robot/Trackland-Demo/doc/Trackland-Demo_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
