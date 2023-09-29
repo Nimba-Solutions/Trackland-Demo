@@ -17,59 +17,127 @@ Insert OperatingHours:
   fields:
   - Name
   - TimeZone
+Insert BusinessHours:
+  sf_object: BusinessHours
+  table: BusinessHours
+  fields:
+  - FridayEndTime
+  - FridayStartTime
+  - IsActive
+  - IsDefault
+  - MondayEndTime
+  - MondayStartTime
+  - Name
+  - SaturdayEndTime
+  - SaturdayStartTime
+  - SundayEndTime
+  - SundayStartTime
+  - ThursdayEndTime
+  - ThursdayStartTime
+  - TimeZoneSidKey
+  - TuesdayEndTime
+  - TuesdayStartTime
+  - WednesdayEndTime
+  - WednesdayStartTime
+Insert Location:
+  sf_object: Location
+  table: Location
+  fields:
+  - Name
+Insert Asset:
+  sf_object: Asset
+  table: Asset
+  fields:
+  - Name
+Insert ServiceContract:
+  sf_object: ServiceContract
+  table: ServiceContract
+  fields:
+  - Name
+Insert Pricebook2:
+  sf_object: Pricebook2
+  table: Pricebook2
+  fields:
+  - Name
+Insert Product2:
+  sf_object: Product2
+  table: Product2
+  fields:
+  - Name
 Insert Account:
   sf_object: Account
   table: Account
   fields:
-  - Description
-  - Fax
   - Name
-  - AccountNumber
-  - Phone
-  - Rating
-  - Site
-  - AccountSource
-  - Type
-  - AnnualRevenue
-  - BillingCity
-  - BillingCountry
-  - BillingGeocodeAccuracy
-  - BillingLatitude
-  - BillingLongitude
-  - BillingState
-  - BillingStreet
-  - BillingPostalCode
-  - CleanStatus
-  - DunsNumber
-  - Jigsaw
-  - NumberOfEmployees
-  - Industry
-  - NaicsCode
-  - NaicsDesc
-  - Ownership
-  - ShippingCity
-  - ShippingCountry
-  - ShippingGeocodeAccuracy
-  - ShippingLatitude
-  - ShippingLongitude
-  - ShippingState
-  - ShippingStreet
-  - ShippingPostalCode
-  - Sic
-  - SicDesc
-  - TickerSymbol
-  - Trackland_Demo__c
-  - Tradestyle
-  - Website
-  - YearStarted
+Insert PricebookEntry:
+  sf_object: PricebookEntry
+  table: PricebookEntry
+  fields:
+  - UnitPrice
   lookups:
-    DandbCompanyId:
-      table: DandBCompany
-      key_field: DandbCompanyId
-    OperatingHoursId:
-      table: OperatingHours
-      key_field: OperatingHoursId
-    ParentId:
+    Pricebook2Id:
+      table: Pricebook2
+      key_field: Pricebook2Id
+    Product2Id:
+      table: Product2
+      key_field: Product2Id
+Insert AssetWarranty:
+  sf_object: AssetWarranty
+  table: AssetWarranty
+  fields:
+  - StartDate
+  lookups:
+    AssetId:
+      table: Asset
+      key_field: AssetId
+Insert ContractLineItem:
+  sf_object: ContractLineItem
+  table: ContractLineItem
+  fields:
+  - Quantity
+  - UnitPrice
+  lookups:
+    PricebookEntryId:
+      table: PricebookEntry
+      key_field: PricebookEntryId
+    ServiceContractId:
+      table: ServiceContract
+      key_field: ServiceContractId
+Insert Entitlement:
+  sf_object: Entitlement
+  table: Entitlement
+  fields:
+  - CasesPerEntitlement
+  - EndDate
+  - Name
+  - IsPerIncident
+  - RemainingCases
+  - RemainingWorkOrders
+  - StartDate
+  - Type
+  - WorkOrdersPerEntitlement
+  lookups:
+    AccountId:
       table: Account
-      key_field: ParentId
-      after: Insert Account
+      key_field: AccountId
+    AssetId:
+      table: Asset
+      key_field: AssetId
+    AssetWarrantyId:
+      table: AssetWarranty
+      key_field: AssetWarrantyId
+    BusinessHoursId:
+      table: BusinessHours
+      key_field: BusinessHoursId
+    ContractLineItemId:
+      table: ContractLineItem
+      key_field: ContractLineItemId
+    LocationId:
+      table: Location
+      key_field: LocationId
+    SvcApptBookingWindowsId:
+      table: OperatingHours
+      key_field: SvcApptBookingWindowsId
+    ServiceContractId:
+      table: ServiceContract
+      key_field: ServiceContractId
