@@ -1,50 +1,4 @@
 extract:
-  Account:
-    fields:
-    - Description
-    - Fax
-    - Name
-    - AccountNumber
-    - Phone
-    - Rating
-    - Site
-    - AccountSource
-    - Type
-    - AnnualRevenue
-    - BillingCity
-    - BillingCountry
-    - BillingGeocodeAccuracy
-    - BillingLatitude
-    - BillingLongitude
-    - BillingState
-    - BillingStreet
-    - BillingPostalCode
-    - CleanStatus
-    - DandbCompanyId
-    - DunsNumber
-    - Jigsaw
-    - NumberOfEmployees
-    - Industry
-    - NaicsCode
-    - NaicsDesc
-    - OperatingHoursId
-    - Ownership
-    - ParentId
-    - ShippingCity
-    - ShippingCountry
-    - ShippingGeocodeAccuracy
-    - ShippingLatitude
-    - ShippingLongitude
-    - ShippingState
-    - ShippingStreet
-    - ShippingPostalCode
-    - Sic
-    - SicDesc
-    - TickerSymbol
-    - Trackland_Demo__c
-    - Tradestyle
-    - Website
-    - YearStarted
   DandBCompany:
     fields:
     - DunsNumber
@@ -53,3 +7,53 @@ extract:
     fields:
     - Name
     - TimeZone
+  Entitlement:
+    fields:
+    - AccountId
+    - AssetId
+    - AssetWarrantyId
+    - BusinessHoursId
+    - CasesPerEntitlement
+    - ContractLineItemId
+    - EndDate
+    - Name
+    - SlaProcessId
+    - LocationId
+    - SvcApptBookingWindowsId
+    - IsPerIncident
+    - RemainingCases
+    - RemainingWorkOrders
+    - ServiceContractId
+    - StartDate
+    - Type
+    - WorkOrdersPerEntitlement
+  BusinessHours:
+    fields:
+    - FridayEndTime
+    - FridayStartTime
+    - IsActive
+    - IsDefault
+    - MondayEndTime
+    - MondayStartTime
+    - Name
+    - SaturdayEndTime
+    - SaturdayStartTime
+    - SundayEndTime
+    - SundayStartTime
+    - ThursdayEndTime
+    - ThursdayStartTime
+    - TimeZoneSidKey
+    - TuesdayEndTime
+    - TuesdayStartTime
+    - WednesdayEndTime
+    - WednesdayStartTime
+  ContractLineItem:
+    fields:
+    - Quantity
+    - UnitPrice
+  Location:
+    fields:
+    - Name
+  Asset:
+    fields:
+    - Name

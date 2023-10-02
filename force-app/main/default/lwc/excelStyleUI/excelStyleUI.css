@@ -1,0 +1,28 @@
+/* CSS in a separate file (excelStyle.css) or within your LWC component */
+
+.excel-grid {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.excel-row {
+    display: flex;
+    margin: 2px 0;
+}
+
+.excel-cell {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+.excel-cell input[type="text"] {
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+.excel-row.header {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
