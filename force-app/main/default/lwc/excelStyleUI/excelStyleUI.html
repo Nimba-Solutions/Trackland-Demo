@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Excel-Style UI">
+        <lightning-datatable
+            key-field="id"
+            data={data}
+            columns={columns}
+            onrowselection={handleRowSelection}
+            selected-rows={selectedRows}
+        ></lightning-datatable>
+        <div class="slds-m-top_medium">
+            <lightning-button-group>
+                <lightning-button label="Delete Selected Rows" onclick={handleDeleteRows}></lightning-button>
+            </lightning-button-group>
+        </div>
+    </lightning-card>
+</template>
